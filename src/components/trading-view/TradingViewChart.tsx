@@ -107,15 +107,17 @@ const TradingViewChart: React.FC<IProps> = (props) => {
     }, [props.candles, theme]);
 
     return (
-        <div ref={chartContainerRef} className='relative w-full'>
-            <p className='text-sm absolute z-10 top-1 left-2'>Last Updated: {props.updatedAt ? dayjs(props.updatedAt).format("YY/MM/DD-HH:mm:ss") : '-'}</p>
-            <Radio.Group value={interval} onChange={handleIntervalChange} className='absolute top-6 left-2 z-10'>
+        <div className='flex flex-col gap-2'>
+            <div ref={chartContainerRef} className='relative w-full' />
+            <label htmlFor="interval-switcher">Interval:</label>
+            <Radio.Group id="interval-switcher" value={interval} onChange={handleIntervalChange}>
                 <Radio.Button value={Interval.OneMinute}>1m</Radio.Button>
                 <Radio.Button value={Interval.FiveMinute}>5m</Radio.Button>
                 <Radio.Button value={Interval.FifteenMinute}>15m</Radio.Button>
                 <Radio.Button value={Interval.OneHour}>1h</Radio.Button>
                 <Radio.Button value={Interval.OneDay}>1d</Radio.Button>
             </Radio.Group>
+            <p className='text-sm'>Last Updated: {props.updatedAt ? dayjs(props.updatedAt).format("YY/MM/DD-HH:mm:ss") : '-'}</p>
         </div>
     )
 }
