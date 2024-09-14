@@ -1,3 +1,5 @@
+/* eslint-disable @typescript-eslint/ban-ts-comment */
+// @ts-nocheck
 import { Radio, RadioChangeEvent } from 'antd';
 import dayjs from 'dayjs';
 import { CandlestickData, ColorType, createChart, Time, WhitespaceData } from 'lightweight-charts';

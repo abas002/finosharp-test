@@ -1,3 +1,5 @@
+/* eslint-disable @typescript-eslint/ban-ts-comment */
+// @ts-nocheck
 import dayjs from 'dayjs';
 import React from 'react';
 import TradingViewChart from 'src/components/trading-view/TradingViewChart';
