@@ -111,7 +111,7 @@ const TradingViewChart: React.FC<IProps> = (props) => {
     return (
         <div className='flex flex-col gap-2'>
             <div ref={chartContainerRef} className='relative w-full' />
-            <label htmlFor="interval-switcher">Interval:</label>
+            <label htmlFor="interval-switcher" className='text-primary dark:text-white'>Interval:</label>
             <Radio.Group id="interval-switcher" value={interval} onChange={handleIntervalChange}>
                 <Radio.Button value={Interval.OneMinute}>1m</Radio.Button>
                 <Radio.Button value={Interval.FiveMinute}>5m</Radio.Button>
@@ -119,7 +119,7 @@ const TradingViewChart: React.FC<IProps> = (props) => {
                 <Radio.Button value={Interval.OneHour}>1h</Radio.Button>
                 <Radio.Button value={Interval.OneDay}>1d</Radio.Button>
             </Radio.Group>
-            <p className='text-sm'>Last Updated: {props.updatedAt ? dayjs(props.updatedAt).format("YY/MM/DD-HH:mm:ss") : '-'}</p>
+            <p className='text-sm text-primary dark:text-white'>Last Updated: {props.updatedAt ? dayjs(props.updatedAt).format("YY/MM/DD-HH:mm:ss") : '-'}</p>
         </div>
     )
 }

@@ -30,7 +30,7 @@ const HomePage = () => {
 
     return (
         <section className='px-8'>
-            <div className="shadow-md p-4 bg-slate-50 box-content rounded-lg">
+            <div className="shadow-md p-4 bg-slate-50 dark:bg-slate-800 box-content rounded-lg">
                 <TradingViewChart candles={useGetKlinesQuery.data ?? []} onChangeInterval={e => setValues(prev => ({ ...prev, interval: e }))} updatedAt={useGetKlinesQuery.dataUpdatedAt} />
             </div>
         </section>
